@@ -1020,6 +1020,8 @@ library.newtab = function(info)
 end
 --
 library.newsection = function(info)
+    print(info)
+
 	local x = info.pos.X
 	local y = info.pos.Y
 	local open = false
