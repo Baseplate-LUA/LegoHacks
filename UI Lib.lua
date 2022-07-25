@@ -1,7 +1,4 @@
 -- made by coolmatt72#6707 (coolmatt72) on v3rm aswell as walter !!!#4155 monke hub discord : https://discord.gg/ZmDkXF3Tz7
-
--- Edits by Kufo 
-
 local cc = game.Workspace.CurrentCamera
 local udim2 = {}
 local instance = {}
@@ -1022,35 +1019,34 @@ library.newtab = function(info)
 end
 --
 library.newsection = function(info)
-    print(info)
-
-	local x = info.pos.X
-	local y = info.pos.Y
+	local x = 0
+	local y = 0
 	local open = false
-	local sectionyname = info.name.."sectiony"
+	if info.side == "left" then x = 10 else x = 165 end
+	local sectionyname = info.side.."sectiony"
 	for i,v in pairs(tabs) do if v.tab == info.tab then y = v[sectionyname] end end
 	for i,v in pairs(tabs) do if v.tab == info.tab then open = v.open end end
 	--
 	local border3 = instance.new("Frame")
-	border3.Size = udim2.snew(0,info.size.X,0,info.size.Y)
+	border3.Size = udim2.snew(0,140+8,0,info.size+8)
 	border3.Color = Color3.fromRGB(0,0,0)
 	border3.Visible = open
 	border3.Position = udim2.pnew(0,x-4,0,10+y-4,info.tab)
 	--
 	local border2 = instance.new("Frame")
-	border3.Size = udim2.snew(0,info.size.X,0,info.size.Y)
+	border2.Size = udim2.snew(0,140+6,0,info.size+6)
 	border2.Color = Color3.fromRGB(20, 20, 20)
 	border2.Visible = open
 	border2.Position = udim2.pnew(0,x-3,0,10+y-3,info.tab)
 	--
 	local border1 = instance.new("Frame")
-	border3.Size = udim2.snew(0,info.size.X,0,info.size.Y)
+	border1.Size = udim2.snew(0,140+2,0,info.size+2)
 	border1.Color = Color3.fromRGB(0,0,0)
 	border1.Visible = open
 	border1.Position = udim2.pnew(0,x-1,0,10+y-1,info.tab)
 	--
 	local section = instance.new("Frame")
-	section.Size = udim2.snew(0,info.size.X,0,info.size.Y,info.tab)
+	section.Size = udim2.snew(0,140,0,info.size,info.tab)
 	section.Position = udim2.pnew(0,x,0,10+y,info.tab)
 	section.Color = Color3.fromRGB(20, 20, 20)
 	section.Visible = open
@@ -2306,4 +2302,40 @@ rs.RenderStepped:Connect(function()
 	end
 end)
 --
-return library
+library.new({size = Vector2.new(315,400),name = "drawing api ui lib",mousedisable = true})
+local tab = library.newtab({name = "esp"})
+local tab2 = library.newtab({name = "aimbot"})
+local tab3 = library.newtab({name = "asdfas"})
+local tab4 = library.newtab({name = "aaa"})
+local tab5 = library.newtab({name = "eee"})
+local sectionz = library.newsection({name = "new secz",tab = tab,side = "right",size = 400})
+local section2 = library.newsection({name = "new xd",tab = tab,side = "left",size = 400})
+local sectionz2 = library.newsection({name = "new secz",tab = tab2,side = "right",size = 200})
+local section22 = library.newsection({name = "new xd",tab = tab2,side = "left",size = 100})
+local sectionz3 = library.newsection({name = "new secz",tab = tab3,side = "right",size = 300})
+local section23 = library.newsection({name = "new xd",tab = tab3,side = "left",size = 150})
+local sectionz4 = library.newsection({name = "new secz",tab = tab4,side = "right",size = 200})
+local section24 = library.newsection({name = "new xd",tab = tab4,side = "left",size = 100})
+local sectionz5 = library.newsection({name = "new secz",tab = tab5,side = "right",size = 100})
+local sectionz5 = library.newsection({name = "new secz",tab = tab5,side = "right",size = 200})
+local section26 = library.newsection({name = "new xd",tab = tab5,side = "left",size = 200})
+local section26 = library.newsection({name = "new xd",tab = tab5,side = "left",size = 96})
+library.newbutton({name = "new button",section = section2,tab = tab,callback = function()print("clicked")end})
+library.newtoggle({name = "new toggle",section = section2,tab = tab,callback = function(val)print(val)end})
+library.newslider({name = "new slider",min = 10,max = 150,def = 30,section = sectionz,tab = tab,callback = function(val)print(val)end})
+library.newslider({name = "changed slider",ended = true,min = 10,max = 150,def = 140,section = section2,tab = tab,callback = function(val)print(val)end})
+library.newbutton({name = "1254",section = sectionz,tab = tab,callback = function()print("clicked")end})
+library.newtextbox({name = "new textbox",section = section2,tab = tab,callback = function(val)print(val)end})
+library.newtextbox({name = "lower textbox",section = sectionz,lower = true,tab = tab,callback = function(val)print(val)end})
+library.newkeybind({name = "keybind",section = section2,tab = tab,callback = function(key)print(key)end})
+library.newdropdown({name = "dropdown",options = {"porn","roblox","dick","lmao"},section = section2,tab = tab,callback = function(val)print(val)end})
+library.newcolorpicker({name = "new cp",def = Color3.fromRGB(42,90,168),section = section2,tab = tab,callback = function(key)
+	print("hue : "..key[1].."\nsaturation : "..key[2].."\nvalue : "..key[3])
+end})
+library.newcolorpicker({name = "w transparency",def = Color3.fromRGB(255,0,0),section = sectionz,tab = tab,transparency = true,callback = function(key)
+	print("hue : "..key[1].."\nsaturation : "..key[2].."\nvalue : "..key[3].."\ntransparency : "..key[4])
+end})
+library.newcolorpicker({name = "w transparency",def = Color3.fromRGB(0,255,0),transp = 0.2,section = sectionz,tab = tab,transparency = true,callback = function(key)
+	print("hue : "..key[1].."\nsaturation : "..key[2].."\nvalue : "..key[3].."\ntransparency : "..key[4])
+end})
+library.init()
