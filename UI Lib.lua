@@ -1022,7 +1022,7 @@ library.newsection = function(info)
 	local x = 0
 	local y = 0
 	local open = false
-	if info.side == "left" then x = 10 else x = 165 end
+	if info.side == "left" then x = 10 else x = 185 end
 	local sectionyname = info.side.."sectiony"
 	for i,v in pairs(tabs) do if v.tab == info.tab then y = v[sectionyname] end end
 	for i,v in pairs(tabs) do if v.tab == info.tab then open = v.open end end
