@@ -1,5 +1,7 @@
 -- made by coolmatt72#6707 (coolmatt72) on v3rm aswell as walter !!!#4155 monke hub discord : https://discord.gg/ZmDkXF3Tz7
 
+-- Edits by Kufo 
+
 local cc = game.Workspace.CurrentCamera
 local udim2 = {}
 local instance = {}
@@ -1025,7 +1027,7 @@ library.newsection = function(info)
 	local x = info.pos.X
 	local y = info.pos.Y
 	local open = false
-	local sectionyname = info.side.."sectiony"
+	local sectionyname = info.name.."sectiony"
 	for i,v in pairs(tabs) do if v.tab == info.tab then y = v[sectionyname] end end
 	for i,v in pairs(tabs) do if v.tab == info.tab then open = v.open end end
 	--
