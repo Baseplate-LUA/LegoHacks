@@ -1020,28 +1020,27 @@ library.newtab = function(info)
 end
 --
 library.newsection = function(info)
-	local x = 0
-	local y = 0
+	local x = pos.X
+	local y = pos.Y
 	local open = false
-	if info.side == "left" then x = 10 else x = 165 end
 	local sectionyname = info.side.."sectiony"
 	for i,v in pairs(tabs) do if v.tab == info.tab then y = v[sectionyname] end end
 	for i,v in pairs(tabs) do if v.tab == info.tab then open = v.open end end
 	--
 	local border3 = instance.new("Frame")
-	border3.Size = udim2.snew(0,140+8,0,info.size+8)
+	border3.Size = udim2.snew(0,size.X,0,size.Y)
 	border3.Color = Color3.fromRGB(0,0,0)
 	border3.Visible = open
 	border3.Position = udim2.pnew(0,x-4,0,10+y-4,info.tab)
 	--
 	local border2 = instance.new("Frame")
-	border2.Size = udim2.snew(0,140+6,0,info.size+6)
+	border3.Size = udim2.snew(0,size.X,0,size.Y)
 	border2.Color = Color3.fromRGB(20, 20, 20)
 	border2.Visible = open
 	border2.Position = udim2.pnew(0,x-3,0,10+y-3,info.tab)
 	--
 	local border1 = instance.new("Frame")
-	border1.Size = udim2.snew(0,140+2,0,info.size+2)
+	border3.Size = udim2.snew(0,size.X,0,size.Y)
 	border1.Color = Color3.fromRGB(0,0,0)
 	border1.Visible = open
 	border1.Position = udim2.pnew(0,x-1,0,10+y-1,info.tab)
